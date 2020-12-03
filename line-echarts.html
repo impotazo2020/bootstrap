@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+    <!-- including ECharts file -->
+    <!--<script src="./echarts.js"></script>-->
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.0.0/echarts.min.js"
+        integrity="sha512-ZRdjJAYP8Kij8Lkln9uiGj0jIrMDLAALm1ZB2b3VfV9XJ0nR4zbJmHKB42/A4tgMlZS4DTPnSAmcYRoS0dginA=="
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.0.0/echarts.min.js"
+        integrity="sha512-ZRdjJAYP8Kij8Lkln9uiGj0jIrMDLAALm1ZB2b3VfV9XJ0nR4zbJmHKB42/A4tgMlZS4DTPnSAmcYRoS0dginA=="
+        crossorigin="anonymous"></script>-->
+    
+    
+</head>
+
+<body>
+    
+    <div id="parent">
+        <div id="main" style="width: 100%;height:100vh"></div>
+    </div>
+    <!--<div><button class="btn btn-success" onclick="addData()">wala wala</button></div>-->
+    <div style="text-align: center;">
+        <button class="btn btn-success" onclick="addData_1()">Add 1</button>
+        <button class="btn btn-success" onclick="DeleteData_1()">Delete 1</button>
+        <button class="btn btn-warning" onclick="addData_2()">Add 2</button>
+        <button class="btn btn-warning" onclick="DeleteData_2()">Delete 2</button>
+        <button class="btn btn-primary" onclick="addData_3()">Add 3</button>
+        <button class="btn btn-primary" onclick="DeleteData_3()">Delete 3</button>
+        <button class="btn btn-danger" onclick="addData_4()">Add 4</button>
+        <button class="btn btn-danger" onclick="DeleteData_4()">Delete 4</button>
+    </div>
+    <script type="text/javascript">
+        // based on prepared DOM, initialize echarts instance
+        var myChart = echarts.init(document.getElementById('main'), null, { renderer: 'svg' });
+        /*function addData(){
+            document.getElementById('main').remove();
+            document.getElementById('parent').innerHTML = "<div id='main' style='width: 100%; height: 100vh'></div>";
+            var myChart = echarts.init(document.getElementById('main'));
+            var option = {
+                xAxis: {
+                    type: 'category',
+                    data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                    show: false
+                },
+                yAxis: {
+                    type: 'value',
+                    show: false,
+
+
+                },
+                series: [{
+                    data: [820, 934, 1190, 1330, 1350, 2000],
+                    type: 'line',
+
+                    symbole: 'circle',
+                    symbolSize: 30,
+                    showSymbol: true,
+                    itemStyle: {
+                        color: 'rgb(44,123,229)',
+                        borderWidth: 2
+                    },
+                    lineStyle: {
+                        width: 5
+                    },
+                    areaStyle: {
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                            offset: 0,
+                            color: 'rgb(187,212,246)'
+                        }, {
+                            offset: 1,
+                            color: 'rgb(248,251,254)'
+                        }])
+                    },
+                    smooth: true
+
+                }]
+
+            };
+
+            // use configuration item and data specified to show chart
+            myChart.setOption(option);
+        }*/
+        $(window).on('resize', function () {
+                if (myChart != null && myChart != undefined) {
+                    myChart.resize();
+                }
+            });
+        // specify chart configuration item and data
+        var symbolSize = 1;
+            var data = [];
+            var points = [];
+
+            option = {
+                title: {
+                    text: 'Click to Add Points'
+                },
+                tooltip: {
+                    formatter: function (params) {
+                        var data = params.data || [0, 0];
+                        return data[0].toFixed(2) + ', ' + data[1].toFixed(2);
+                    }
+                },
+                grid: {
+                    left: '3%',
+                    right: '4%',
+                    bottom: '3%',
+                    containLabel: true
+                },
+                xAxis: {
+                    min: 0,
+                    max: 500,
+                    type: 'value',
+                    axisLine: { onZero: false },
+                    show:false
+                },
+                yAxis: {
+                    min: 0,
+                    max: 400,
+                    type: 'value',
+                    axisLine: { onZero: false },
+                    show: false
+                },
+                animation: true,
+                
+                animationThreshold: 2000,
+                animationDuration: 1000,
+                animationDurationUpdate: 1000,
+                animationEasing: 'quadraticIn',
+                
+                animationDelayUpdate: 100,
+                series: [
+                    {
+                        id: 'a',
+                        type: 'line',
+                        smooth: true,
+                        symbolSize: symbolSize,
+                        data: data,
+                        animation: true,
+
+                        animationThreshold: 2000,
+                        animationDuration: 1000,
+                        animationDurationUpdate: 1000,
+                        animationDelayUpdate: 1000,
+                        animationEasing: 'quadraticIn',
+                        areaStyle: {
+                            color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                                offset: 0,
+                                color: 'rgb(187,212,246)'
+                            }, {
+                                offset: 1,
+                                color: 'rgb(248,251,254)'
+                            }])
+                        }
+                        
+                        
+                    }
+                ]
+                
+            };
+
+            var zr = myChart.getZr();
+
+
+            zr.on('click', function (params) {
+                var length_data_array= myChart._model.option.series[0].data.length;
+            
+                    console.log(params.offsetX, params.offsetY);
+                var pointInPixel = [params.offsetX, params.offsetY];
+                var pointInGrid = myChart.convertFromPixel('grid', pointInPixel);
+                console.log('point_in_grid',pointInGrid);
+                if(length_data_array<0)
+                {   var x= Math.round(myChart._model.option.series[0].data[length_data_array - 1][0]);
+                    var y= Math.round(myChart._model.option.series[0].data[length_data_array - 1][1]);
+                    if((pointInGrid[0]>=x-0.6)&& (pointInGrid[0]<= x + 0.6)&& (pointInGrid[1] >= y - 0.6)&& (pointInGrid[1] <= y + 0.6))
+                        { pointInPixel = [Math.round(myChart._model.option.series[0].data[length_data_array - 1][0])+100, Math.round(myChart._model.option.series[0].data[length_data_array - 1][1])];
+                        //var pointInGrid = myChart.convertFromPixel('grid', pointInPixel);
+                        pointInGrid = [myChart._model.option.series[0].data[length_data_array - 1][0]+2, myChart._model.option.series[0].data[length_data_array - 1][1]+1]
+                            
+                        if (myChart.containPixel('grid', /*pointInPixel*/[100,100])) {
+                            data.push(pointInGrid);
+
+                            myChart.setOption({
+                                series: [{
+                                    id: 'a',
+                                    data: data
+                                }]
+                            });
+                        }
+                    }
+                }
+            });
+            function addData_1(){
+                if(data.length==0){
+                data.push(/*pointInGrid*/[0, 10]);
+                
+                myChart.setOption({
+                    series: [{
+                        id: 'a',
+                        type: 'line',
+                        data: data
+                    }]
+                });
+                data.push(/*pointInGrid*/[100, 20]);
+                
+                myChart.setOption({
+                    series: [{
+                        id: 'a',
+                        type: 'line',
+                        data: data
+                    }]
+                });
+                }
+            }
+            function DeleteData_1(){
+                data=[];
+                
+                myChart.setOption({
+                    series: [{
+                        id: 'a',
+                        data: data
+                    }]
+                });
+                
+            }
+            function addData_2(){
+                if (data.length == 0) {
+                    data = [[0, 10], [100, 20], [200, 40]];
+
+                    myChart.setOption({
+                        series: [{
+                            id: 'a',
+                            type: 'line',
+                            data: data
+                        }]
+                    });
+                }
+                if (data.length == 2) {
+                    data.push(/*pointInGrid*/[200, 40]);
+
+                    myChart.setOption({
+                        series: [{
+                            id: 'a',
+                            type:'line',
+                            data: data
+                        }]
+                    });
+                }
+            }
+            function DeleteData_2(){
+
+                if (data.length >= 3) {
+                    data = [[0, 10], [100, 20]];
+                    //data.pop(/*pointInGrid*/[200, 40]);
+
+                    myChart.setOption({
+                        series: [{
+                            id: 'a',
+                            data: data
+                        }]
+                    });
+                }
+            }
+            function addData_3(){
+                if (data.length == 0|| data.length == 2) {
+                    data = [[0, 10], [100, 20], [200, 40], [300, 70]];
+
+                    myChart.setOption({
+                        series: [{
+                            id: 'a',
+                            type: 'line',
+                            data: data
+                        }]
+                    });
+                }
+                
+                if (data.length == 3) {
+                    data.push(/*pointInGrid*/[300, 70]);
+
+                    myChart.setOption({
+                        series: [{
+                            id: 'a',
+                            data: data
+                        }]
+                    });
+                }
+            }
+            function DeleteData_3(){
+                //data.pop(/*pointInGrid*/[300, 70]);
+                if (data.length >= 4) {
+                    data = [[0, 10], [100, 20], [200, 40]];
+                    myChart.setOption({
+                        series: [{
+                            id: 'a',
+                            data: data
+                        }]
+                    });
+                }
+            }
+            function addData_4(){
+                if (data.length == 0|| data.length == 2|| data.length == 3) {
+                    data = [[0, 10], [100, 20], [200, 40], [300, 70], [400, 110]];
+
+                    myChart.setOption({
+                        series: [{
+                            id: 'a',
+                            type: 'line',
+                            data: data
+                        }]
+                    });
+                }
+                if (data.length == 4) {
+                    data.push(/*pointInGrid*/[400, 110]);
+
+                    myChart.setOption({
+                        series: [{
+                            id: 'a',
+                            data: data
+                        }]
+                    });
+                }
+            }
+            function DeleteData_4(){
+               // data.pop(/*pointInGrid*/[400, 110]);
+               if (data.length >= 5) {
+                    data = [[0, 10], [100, 20], [200, 40], [300, 70]];
+                    myChart.setOption({
+                        series: [{
+                            id: 'a',
+                            data: data
+                        }]
+                    });
+                }
+                
+            }
+            function addData() {
+                var main = document.getElementById('main').children;
+                
+                console.log("children width", main[0].style.width);
+                var height = parseInt(main[0].style.height);
+                var width = parseInt(main[0].style.width);
+                console.log("children height", height);
+                var the_chart= myChart;
+                
+                var height_10= height*8.9;
+                var width_10= Math.round(100);
+
+                var pointInPixel = [68 , 800];
+                var pointInGrid = myChart.convertFromPixel('grid', pointInPixel);
+                if (length_data_array = myChart._model.option.series[0].data.length == 0)
+                 {if (myChart.containPixel('grid', pointInPixel)) {
+                        data.push(/*pointInGrid*/[0,0]);
+
+                        myChart.setOption({
+                            series: [{
+                                id: 'a',
+                                data: data
+                            }]
+                        });
+                    }
+                }
+                else/*(length_data_array = myChart._model.option.series[0].data.length !=0)*/ {
+                    let length_data_array = myChart._model.option.series[0].data.length;
+
+                    
+                    
+                    //var pointInGrid = myChart.convertFromPixel('grid', pointInPixel);
+                    let pointInGrid = [myChart._model.option.series[0].data[length_data_array - 1][0] + 2, myChart._model.option.series[0].data[length_data_array - 1][1] + 1]
+                    console.log(pointInGrid);
+                    if (myChart.containPixel('grid', /*pointInPixel*/[100, 100])) {
+                        data.push(pointInGrid);
+
+                        myChart.setOption({
+                            series: [{
+                                id: 'a',
+                                data: data
+                            }]
+                        });
+                    }
+                }
+                
+            };
+
+            zr.on('mousemove', function (params) {
+                var pointInPixel = [params.offsetX, params.offsetY];
+                zr.setCursorStyle(myChart.containPixel('grid', pointInPixel) ? 'copy' : 'default');
+            });
+        // use configuration item and data specified to show chart
+        myChart.setOption(option);
+       // console.log(myChart._model.option);
+    </script>
+</body>
+<style>
+    
+</style>
+</html>

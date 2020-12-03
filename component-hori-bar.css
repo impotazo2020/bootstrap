@@ -1,0 +1,82 @@
+.master {
+  position: relative;
+}
+.contain {
+  border-radius: 25px;
+}
+.bar {
+  height: 10px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+.bar-1 {
+  background-color: rgb(237, 242, 249);
+  z-index: 1;
+  border-radius: 0 25px 25px 0;
+}
+.bar-2 {
+  background-color: white;
+  z-index: 2;
+  width: 71%;
+}
+.bar-3 {
+  background-color: rgb(0, 210, 122);
+  z-index: 3;
+  width: 70%;
+}
+.bar-4 {
+  background-color: white;
+  z-index: 3;
+  width: 61%;
+}
+.bar-5 {
+  background-color: rgb(39, 188, 253);
+  z-index: 3;
+  width: 60%;
+}
+.bar-6 {
+  background-color: white;
+  z-index: 3;
+  width: 41%;
+}
+.bar-7 {
+  background-color: rgb(32, 117, 230);
+  z-index: 3;
+  width: 40%;
+  border-radius: 25px 0 0 25px;
+}
+
+.comments {
+  padding-top: 40px;
+}
+.comments li {
+  display: inline-block;
+  list-style: circle;
+}
+.comments-1::before {
+  content: "";
+  border-radius: 100%;
+  background-color: rgb(32, 117, 230);
+  padding: 0px 8.3px;
+}
+
+.comments-2::before {
+  content: "";
+  border-radius: 100%;
+  background-color: rgb(39, 188, 253);
+  padding: 0px 8.3px;
+}
+.comments-3::before {
+  content: "";
+  border-radius: 100%;
+  background-color: rgb(0, 210, 122);
+  padding: 0px 8.3px;
+}
+.comments-4::before {
+  content: "";
+  border-radius: 100%;
+  background-color: rgb(237, 242, 249);
+  padding: 0px 8.3px;
+}

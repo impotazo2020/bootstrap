@@ -1,0 +1,99 @@
+:root {
+  --c1: "monday";
+  --c2: "Tuesday";
+  --c3: "Wednesday";
+  --c4: "Thirsday";
+  --c5: "Friday";
+  --c6: "Saturday";
+  --c7: "Sunday";
+}
+
+.first-elmn {
+  position: absolute;
+  bottom: 0;
+  left: 8%;
+  width: 10px;
+}
+
+.second-elmn {
+  position: absolute;
+  bottom: 0;
+  left: 22%;
+  width: 10px;
+}
+* {
+  z-index: 0;
+}
+.has:hover::before {
+  content: var(--c1);
+  background-color: white;
+  padding: 10px;
+  left: -30px;
+  top: -35px;
+  z-index: 1000;
+  position: absolute;
+  border: 1px solid black;
+  border-radius: 30px;
+}
+.has1:hover::before {
+  content: var(--c1);
+}
+.has2:hover::before {
+  content: var(--c2);
+}
+.has3:hover::before {
+  content: var(--c3);
+}
+.has4:hover::before {
+  content: var(--c4);
+}
+.has5:hover::before {
+  content: var(--c5);
+}
+.has6:hover::before {
+  content: var(--c6);
+}
+.has7:hover::before {
+  content: var(--c7);
+}
+.third-elmn {
+  position: absolute;
+  bottom: 0;
+  left: 36%;
+  width: 10px;
+}
+.fourth-elmn {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 10px;
+}
+.fifth-elmn {
+  position: absolute;
+  bottom: 0;
+  left: 64%;
+  width: 10px;
+}
+.sixth-elmn {
+  position: absolute;
+  bottom: 0;
+  left: 78%;
+  width: 10px;
+}
+.seventh-elmn {
+  position: absolute;
+  bottom: 0;
+  left: 92%;
+  width: 10px;
+}
+.elmn-1 {
+  background-color: rgb(44, 123, 229);
+  border-radius: 20px 20px 0 0;
+  z-index: 1;
+}
+.elmn-2 {
+  background-color: #edf2f9;
+  border-radius: 20px 20px 0 0;
+  z-index: 0;
+  height: 0px;
+}

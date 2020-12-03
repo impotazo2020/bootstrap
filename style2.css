@@ -1,0 +1,88 @@
+.back-blue-falco {
+  background-color: rgb(237, 242, 249);
+}
+.side-baar {
+  display: none;
+}
+.formulaire-research {
+  display: none !important;
+}
+.image-bootstrap {
+  display: none;
+}
+.the-floated-one {
+  float: none !important;
+}
+.navnav-logo,
+.navnav-text {
+  display: inline-flex;
+}
+.navnav {
+  display: block;
+}
+.navnav-text-2 {
+  display: block;
+}
+/**********side bar *********/
+.homepage-content {
+  display: none;
+  font-size: 12px;
+}
+.Pages-page-content {
+  display: none;
+  font-size: 12px;
+}
+.email-page-content {
+  display: none;
+  font-size: 12px;
+}
+.authentication-page-content {
+  display: none;
+  font-size: 12px;
+}
+.ecommerce-page-content {
+  display: none;
+  font-size: 12px;
+}
+.Components-page-content {
+  display: none;
+  font-size: 12px;
+}
+.Utilities-page-content {
+  display: none;
+  font-size: 12px;
+}
+.Plugins-page-content {
+  display: none;
+  font-size: 12px;
+}
+.Documentations-page-content {
+  display: none;
+  font-size: 12px;
+}
+/********** end of side bar ***/
+@media only screen and (min-width: 385px) {
+  .the-floated-one {
+    float: right !important;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .image-bootstrap {
+    display: block;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .side-baar {
+    display: block;
+  }
+  .formulaire-research {
+    display: inline-flex !important;
+  }
+  .navnav-logo,
+  .navnav-text {
+    display: none;
+  }
+  .navnav {
+    display: none;
+  }
+}

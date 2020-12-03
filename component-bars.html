@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./component-bars.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="parent"style="position: relative; height:100px;">
+        <div class="has has1 first-elmn elmn-1 first-elmn-1" ></div>
+        <div class="has  first-elmn elmn-2 first-elmn-2"></div>
+        <div class="has has2 second-elmn elmn-1 second-elmn-1" ></div>
+        <div class="has second-elmn elmn-2 second-elmn-2"></div>
+        <div class="has has3 third-elmn elmn-1 third-elmn-1" ></div>
+        <div class="has third-elmn elmn-2 third-elmn-2"></div>
+        <div class="has has4 fourth-elmn elmn-1 fourth-elmn-1" ></div>
+        <div class="has fourth-elmn elmn-2 fourth-elmn-2"></div>
+        <div class="has has5 fifth-elmn elmn-1 fifth-elmn-1" ></div>
+        <div class="has fifth-elmn elmn-2 fifth-elmn-2"></div>
+        <div class="has has6 sixth-elmn elmn-1 sixth-elmn-1" ></div>
+        <div class="has sixth-elmn elmn-2 sixth-elmn-2"></div>
+        <div class="has has7 seventh-elmn elmn-1 seventh-elmn-1" ></div>
+        <div class="has seventh-elmn elmn-2 seventh-elmn-2"></div>
+
+    </div>
+</body>
+<script>
+    var wid=$(".parent").height();
+
+    $(".first-elmn-1").animate({ "height": 0 }, 1); 
+    $(".first-elmn-1").animate({"height": wid/2},500);
+    $(".first-elmn-2").animate({ "height": wid }, 1);
+
+    $(".second-elmn-1").animate({ "height": 0 }, 1); 
+    $(".second-elmn-1").animate({"height": wid*7/8},500);
+    $(".second-elmn-2").animate({ "height": wid }, 1);
+
+    $(".third-elmn-1").animate({ "height": 0 }, 1); 
+    $(".third-elmn-1").animate({"height": wid*5/8},500);
+    $(".third-elmn-2").animate({ "height": wid }, 1);
+
+    $(".fourth-elmn-1").animate({ "height": 0 }, 1); 
+    $(".fourth-elmn-1").animate({"height": wid*7/9},500);
+    $(".fourth-elmn-2").animate({ "height": wid }, 1);
+
+    $(".fifth-elmn-1").animate({ "height": 0 }, 1); 
+    $(".fifth-elmn-1").animate({"height": wid*5/9},500);
+    $(".fifth-elmn-2").animate({ "height": wid }, 1);
+
+    $(".sixth-elmn-1").animate({ "height": 0 }, 1); 
+    $(".sixth-elmn-1").animate({"height": wid*4/9},500);
+    $(".sixth-elmn-2").animate({ "height": wid }, 1);
+
+    $(".seventh-elmn-1").animate({ "height": 0 }, 1); 
+    $(".seventh-elmn-1").animate({"height": wid*6/9},500);
+    $(".seventh-elmn-2").animate({ "height": wid }, 1);
+</script>
+</html>

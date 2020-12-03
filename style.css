@@ -1,0 +1,34 @@
+.back-blue-falco {
+  background-color: rgb(237, 242, 249);
+}
+.research-bar {
+  display: none;
+}
+.color-whhwh {
+  height: 50px;
+}
+@media only screen and (min-width: 992px) {
+  .research-bar {
+    display: block;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .content-flexed {
+    margin-left: 30%;
+  }
+  .research-bar {
+    display: none;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  .content-flexed {
+    margin-left: 27%;
+  }
+  .research-bar {
+    display: none;
+  }
+
+  .navbar-toggler-icon {
+    display: block !important;
+  }
+}
